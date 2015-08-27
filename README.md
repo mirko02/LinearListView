@@ -10,8 +10,12 @@ Download
 Gradle:
 
 ```groovy
+repositories { 
+	maven { url "http://jcenter.bintray.com" } 
+}
+
 dependencies {
-  compile 'com.github.frankiesardo:linearlistview:1.0.1@aar'
+  compile 'com.github.mirko02:linearlistview:0.1@aar'
 }
 ```
 
@@ -56,8 +60,6 @@ Roadmap
 
 License
 =======
-
-    Copyright 2012 Frankie Sardo
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
