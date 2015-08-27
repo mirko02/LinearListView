@@ -1,7 +1,7 @@
 apply plugin: 'maven'
 apply plugin: 'signing'
 
-version = "1.0.1"
+version = "2.0.0"
 
 def isReleaseBuild() {
     !version.contains("SNAPSHOT")
@@ -34,15 +34,14 @@ afterEvaluate { project ->
                     name 'LinearListView'
                     packaging 'aar'
                     artifactId 'linearlistview'
-                    groupId 'com.github.frankiesardo'
-                    url 'https://github.com/frankiesardo/LinearListView'
+                    groupId 'com.github.mirko02'
+                    url 'https://github.com/mirko02/LinearListView'
                     description 'Android library that allows you to bind a LinearLayout with a ListAdapter'
-                    inceptionYear '2012'
+                    inceptionYear '2015'
 
                     scm {
-                        url 'https://github.com/frankiesardo/LinearListView'
-                        connection 'scm:git:git://github.com/frankiesardo/LinearListView.git'
-                        developerConnection 'scm:git@github.com:novoda/LinearListView.git'
+                        url 'https://github.com/mirko02/LinearListView'
+                        connection 'scm:git:git://github.com/mirko02/LinearListView.git'
                     }
 
                     licenses {
@@ -55,8 +54,8 @@ afterEvaluate { project ->
 
                     developers {
                         developer {
-                            id 'frankiesardo'
-                            name 'Frankie Sardo'
+                            id 'mirko02'
+                            name 'Carlos Ocampo'
                         }
                     }
                 }
@@ -70,7 +69,7 @@ afterEvaluate { project ->
     }
 
     task androidJavadocs(type: Javadoc) {
-        source = android.sourceSets.main.allJava
+        source = android.sourceSets.main.java
     }
 
     task androidJavadocsJar(type: Jar) {
@@ -82,7 +81,7 @@ afterEvaluate { project ->
     task androidSourcesJar(type: Jar) {
         classifier = 'sources'
         //basename = artifact_id
-        from android.sourceSets.main.allSource
+        from android.sourceSets.main.java
     }
 
     artifacts {
